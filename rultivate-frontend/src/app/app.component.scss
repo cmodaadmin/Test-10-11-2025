@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+main {
+  min-height: calc(100vh - 64px);
+}
+
+button.btn-light {
+  border: none;
+}

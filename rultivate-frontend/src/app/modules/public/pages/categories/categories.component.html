@@ -1,0 +1,11 @@
+<section class="container py-5">
+  <app-page-header title="Service Categories" subtitle="Curated for Indian enterprises"></app-page-header>
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let category of ['IT Managed Services', 'Marketing & Brand', 'Logistics & Fulfilment', 'Compliance & Legal', 'Facilities Management', 'Financial Outsourcing']">
+      <div class="salesforce-card h-100">
+        <h5 class="fw-semibold">{{ category }}</h5>
+        <p class="text-muted">Discover vetted providers with GST compliance, verified references and India-wide delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>

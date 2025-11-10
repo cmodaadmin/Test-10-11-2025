@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f6f9;
+  color: #1f2933;
+  min-height: 100vh;
+}
+
+.salesforce-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+  padding: 1.5rem;
+}
+
+.salesforce-sidebar {
+  min-width: 260px;
+  background: #001b44;
+  color: #fff;
+}
+
+.salesforce-sidebar a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.salesforce-sidebar a.active,
+.salesforce-sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.salesforce-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 0.75rem 1.5rem;
+}
+
+.badge-inr {
+  background: #f0f5ff;
+  color: #001b44;
+  font-weight: 600;
+}
+
+.nav-link-role {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: #3a84ff;
+}

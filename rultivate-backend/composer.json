@@ -1,0 +1,13 @@
+{
+  "name": "rultivate/backend",
+  "description": "Rultivate Core PHP REST API",
+  "type": "project",
+  "require": {
+    "firebase/php-jwt": "^6.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rultivate\\": "src/"
+    }
+  }
+}

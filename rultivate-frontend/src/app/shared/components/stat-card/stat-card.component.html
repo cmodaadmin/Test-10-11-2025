@@ -1,0 +1,10 @@
+<div class="salesforce-card d-flex align-items-center justify-content-between">
+  <div>
+    <p class="text-uppercase text-muted small mb-1">{{ label }}</p>
+    <h3 class="mb-0">{{ value }}</h3>
+    <small class="text-success" *ngIf="trend">{{ trend }}</small>
+  </div>
+  <div class="display-6 text-primary">
+    <i class="bi" [ngClass]="icon"></i>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<app-page-header title="Customer Profile" subtitle="Update billing and contact details"></app-page-header>
+<form [formGroup]="form" (ngSubmit)="submit()" class="salesforce-card">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Full Name</label>
+      <input class="form-control" formControlName="fullName" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Company</label>
+      <input class="form-control" formControlName="company" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Phone</label>
+      <input class="form-control" formControlName="phone" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">City</label>
+      <input class="form-control" formControlName="city" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">State</label>
+      <input class="form-control" formControlName="state" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">PIN Code</label>
+      <input class="form-control" formControlName="pinCode" />
+    </div>
+    <div class="col-12">
+      <label class="form-label">Address</label>
+      <textarea class="form-control" formControlName="address" rows="3"></textarea>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-4" type="submit">Save Changes</button>
+  <div class="alert alert-success mt-3" *ngIf="message">{{ message }}</div>
+</form>

@@ -1,0 +1,42 @@
+<section class="container py-5">
+  <app-page-header title="Talk to Rultivate" subtitle="Our support team is available Monday–Saturday, 9am to 7pm IST"></app-page-header>
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <form [formGroup]="form" (ngSubmit)="submit()" class="salesforce-card">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name</label>
+            <input class="form-control" formControlName="name" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Company</label>
+            <input class="form-control" formControlName="company" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input class="form-control" formControlName="email" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input class="form-control" formControlName="phone" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">How can we help?</label>
+            <textarea class="form-control" rows="4" formControlName="message"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Submit Enquiry</button>
+        <div class="alert alert-success mt-3" *ngIf="successMessage">{{ successMessage }}</div>
+      </form>
+    </div>
+    <div class="col-lg-6">
+      <div class="salesforce-card h-100">
+        <h5>India Support Centre</h5>
+        <p class="text-muted">Rultivate Technologies Pvt. Ltd.<br/>Bengaluru, Karnataka</p>
+        <p class="mb-1"><strong>Email:</strong> support@rultivate.in</p>
+        <p class="mb-1"><strong>Phone:</strong> +91-80-4000-1234</p>
+        <p class="mb-0">For enterprise onboarding, ask for our super admin enablement guide.</p>
+      </div>
+    </div>
+  </div>
+</section>

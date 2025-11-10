@@ -1,0 +1,36 @@
+<section class="container py-5" style="max-width: 720px;">
+  <div class="salesforce-card">
+    <h2 class="h4 fw-semibold mb-4">Sign in to Rultivate</h2>
+    <ul class="nav nav-tabs mb-4">
+      <li class="nav-item">
+        <button class="nav-link" [class.active]="role === 'customer'" (click)="role = 'customer'">Customer</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" [class.active]="role === 'vendor'" (click)="role = 'vendor'">Vendor</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" [class.active]="role === 'admin'" (click)="role = 'admin'">Admin / Dept</button>
+      </li>
+    </ul>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="row g-3">
+      <div class="col-12">
+        <label class="form-label">Email</label>
+        <input class="form-control" formControlName="email" type="email" />
+      </div>
+      <div class="col-12">
+        <label class="form-label">Password</label>
+        <input class="form-control" formControlName="password" type="password" />
+      </div>
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <a routerLink="/auth/forgot-password">Forgot password?</a>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+      <div class="col-12" *ngIf="error">
+        <div class="alert alert-danger">{{ error }}</div>
+      </div>
+    </form>
+    <div class="mt-4 small text-muted">
+      New to Rultivate? <a routerLink="/auth/register/customer">Create a customer account</a> or <a routerLink="/auth/register/vendor">register as vendor</a>.
+    </div>
+  </div>
+</section>

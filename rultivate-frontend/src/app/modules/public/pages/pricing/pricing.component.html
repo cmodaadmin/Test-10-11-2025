@@ -1,0 +1,21 @@
+<section class="container py-5">
+  <app-page-header title="Vendor Pricing" subtitle="Simple, transparent subscriptions in ₹"></app-page-header>
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let plan of plans">
+      <div class="salesforce-card h-100">
+        <h5 class="fw-semibold">{{ plan.name }}</h5>
+        <div class="display-6 fw-bold">₹ {{ plan.priceInr | number }}</div>
+        <p class="text-muted">Billed {{ plan.billingCycle | lowercase }}</p>
+        <p *ngIf="plan.description" class="text-muted">{{ plan.description }}</p>
+        <ul class="list-unstyled small text-muted">
+          <li>RFQs / month: {{ plan.maxRfqsPerMonth || 'Unlimited' }}</li>
+          <li>Team seats: {{ plan.maxTeamMembers || 'Unlimited' }}</li>
+        </ul>
+        <button class="btn btn-primary w-100">Choose Plan</button>
+      </div>
+    </div>
+    <div class="col-12" *ngIf="!plans.length">
+      <div class="alert alert-info">Plans are curated by administrators. Please check back soon.</div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<app-page-header title="Customer Dashboard" subtitle="Monitor RFQs, bids and orders"></app-page-header>
+<div class="row g-4 mb-4">
+  <div class="col-md-3"><app-stat-card label="Active RFQs" [value]="rfqs.length"></app-stat-card></div>
+  <div class="col-md-3"><app-stat-card label="Orders" [value]="orders.length" icon="bi-bag-check"></app-stat-card></div>
+  <div class="col-md-3"><app-stat-card label="Total Spend" [value]="'₹ ' + (orders.reduce((sum, order) => sum + order.totalAmountInr, 0) | number)" icon="bi-currency-rupee"></app-stat-card></div>
+  <div class="col-md-3"><app-stat-card label="Completed" [value]="orders.filter(o => o.status === 'COMPLETED').length" icon="bi-check-circle"></app-stat-card></div>
+</div>
+<div class="salesforce-card">
+  <h5 class="mb-3">Recent RFQs</h5>
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Budget</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rfq of rfqs | slice:0:5">
+          <td><a [routerLink]="['/customer/rfqs', rfq.id]">{{ rfq.title }}</a></td>
+          <td><span class="badge bg-light text-dark">{{ rfq.status }}</span></td>
+          <td>₹ {{ rfq.budgetInr | number }}</td>
+          <td>{{ rfq.createdAt | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

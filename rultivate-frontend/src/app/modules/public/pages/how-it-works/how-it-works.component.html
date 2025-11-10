@@ -1,0 +1,16 @@
+<section class="container py-5">
+  <app-page-header title="How Rultivate Works" subtitle="Four steps to enterprise-grade procurement"></app-page-header>
+  <div class="row g-4">
+    <div class="col-md-3" *ngFor="let step of [
+      { title: 'Create RFQ', desc: 'Define your scope, budget in ₹ and delivery expectations.' },
+      { title: 'Invite Vendors', desc: 'Select from Rultivate vendors or add your own network.' },
+      { title: 'Compare Bids', desc: 'Structured scoring for price, SLA, compliance and references.' },
+      { title: 'Award & Track', desc: 'Auto-generate orders, milestones and finance-ready invoices.' }
+    ]">
+      <div class="salesforce-card h-100">
+        <h5 class="fw-semibold">{{ step.title }}</h5>
+        <p class="text-muted mb-0">{{ step.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>

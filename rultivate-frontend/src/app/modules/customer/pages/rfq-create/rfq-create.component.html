@@ -1,0 +1,27 @@
+<app-page-header title="Create RFQ" subtitle="Share scope with vendors"></app-page-header>
+<form [formGroup]="form" (ngSubmit)="submit()" class="salesforce-card">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Title</label>
+      <input class="form-control" formControlName="title" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Category</label>
+      <input class="form-control" formControlName="category" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Budget (₹)</label>
+      <input class="form-control" formControlName="budgetInr" type="number" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Expected Delivery</label>
+      <input class="form-control" formControlName="expectedDeliveryDate" type="date" />
+    </div>
+    <div class="col-12">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" rows="5" formControlName="description"></textarea>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-4" type="submit">Publish RFQ</button>
+  <div class="alert alert-success mt-3" *ngIf="message">{{ message }}</div>
+</form>

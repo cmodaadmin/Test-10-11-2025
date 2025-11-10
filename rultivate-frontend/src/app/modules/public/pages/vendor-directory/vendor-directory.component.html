@@ -1,0 +1,29 @@
+<section class="container py-5">
+  <app-page-header title="Explore Vendors" subtitle="Filter by category, city and certifications"></app-page-header>
+  <div class="salesforce-card mb-4">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-6">
+        <label class="form-label">Search</label>
+        <input class="form-control" [(ngModel)]="searchTerm" placeholder="Company name or keyword" name="searchTerm" />
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-primary w-100" (click)="fetchVendors()">Search</button>
+      </div>
+    </div>
+  </div>
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let vendor of vendors">
+      <div class="salesforce-card h-100">
+        <h5 class="fw-semibold">{{ vendor.companyName }}</h5>
+        <p class="text-muted">{{ vendor.city }}, {{ vendor.state }}</p>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="badge bg-light text-dark" *ngFor="let service of vendor.services">{{ service.name }}</span>
+        </div>
+        <a [routerLink]="['/vendors', vendor.slug]" class="btn btn-outline-primary btn-sm">View Profile</a>
+      </div>
+    </div>
+    <div class="col-12" *ngIf="!vendors.length && !loading">
+      <div class="alert alert-info">No vendors match the criteria yet. Vendors can register to be discoverable instantly.</div>
+    </div>
+  </div>
+</section>

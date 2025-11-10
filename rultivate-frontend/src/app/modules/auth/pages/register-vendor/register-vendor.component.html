@@ -1,0 +1,41 @@
+<section class="container py-5" style="max-width: 720px;">
+  <div class="salesforce-card">
+    <h2 class="h4 fw-semibold mb-4">Register your vendor company</h2>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="row g-3">
+      <div class="col-12">
+        <label class="form-label">Company Name</label>
+        <input class="form-control" formControlName="companyName" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Primary Contact</label>
+        <input class="form-control" formControlName="fullName" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Phone</label>
+        <input class="form-control" formControlName="phone" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input class="form-control" formControlName="email" type="email" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Password</label>
+        <input class="form-control" formControlName="password" type="password" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">GST Number</label>
+        <input class="form-control" formControlName="gstNumber" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">PAN Number</label>
+        <input class="form-control" formControlName="panNumber" />
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Register Vendor</button>
+      </div>
+      <div class="col-12" *ngIf="error">
+        <div class="alert alert-danger">{{ error }}</div>
+      </div>
+    </form>
+  </div>
+</section>
